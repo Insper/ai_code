@@ -19,6 +19,15 @@ def test_largura2():
     print(f'Solução = {result.show_path()}')
     assert result.show_path() == ""
 
+
+def test_largura3():
+    state = VacuumWorld('right', False, False, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'\nEstado inicial = {state.env()}')
+    print(f'Solução = {result.show_path()}')
+    assert result.show_path() == " ; clean ; Move Left ; clean"
+
 def test_profundidade():
     state = VacuumWorld('left', True, False, '')
     algorithm = BuscaProfundidade()
@@ -27,6 +36,15 @@ def test_profundidade():
     print(f'Solução = {result.show_path()}')
     assert result.show_path() == " ; clean ; clean ; clean ; clean ; clean ; clean ; clean ; Move Right ; clean ; Move Left"
 
+def test_profundidade2():
+    state = VacuumWorld('left', False, True, '')
+    algorithm = BuscaProfundidade()
+    result = algorithm.search(state, 20)
+    print(f'\nEstado inicial = {state.env()}')
+    print(f'Solução = {result.show_path()}')
+    assert result.show_path() == " ; clean"
+
+
 def test_BPI():
     state = VacuumWorld('left', True, False, '')
     algorithm = BuscaProfundidadeIterativa()
@@ -34,3 +52,11 @@ def test_BPI():
     print(f'\nEstado inicial = {state.env()}')
     print(f'Solução = {result.show_path()}')
     assert result.show_path() == " ; Move Right ; clean ; Move Left"
+
+def test_BPI2():
+    state = VacuumWorld('left', True, True, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    print(f'\nEstado inicial = {state.env()}')
+    print(f'Solução = {result.show_path()}')
+    assert result.show_path() == ""
