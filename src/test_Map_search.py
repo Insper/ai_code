@@ -10,7 +10,6 @@ def test_AEstrela():
 
     state = Map('i', 0, 'i', 'x')
     algorithm = AEstrela()
-    #algorithm = BuscaCustoUniforme()
     result = algorithm.search(state)
 
 
@@ -23,7 +22,6 @@ def test_BuscaLargura():
 
     state = Map('i', 0, 'i', 'x')
     algorithm = BuscaLargura()
-    #algorithm = BuscaCustoUniforme()
     result = algorithm.search(state)
 
 
@@ -36,7 +34,6 @@ def test_BuscaProfundidade():
 
     state = Map('i', 0, 'i', 'x')
     algorithm = BuscaProfundidade()
-    #algorithm = BuscaCustoUniforme()
     result = algorithm.search(state, 10)
 
 
