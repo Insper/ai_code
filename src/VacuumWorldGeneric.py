@@ -69,7 +69,7 @@ class VacuumWorldGeneric(State):
         return str(self.operator)
     
     def env(self):
-        return '\n'.join('\t'.join('%0.3f' %x for x in y) for y in self.mapa)+" "+str(self.lin)+" "+str(self.col)
+        return str(self.mapa)+" "+str(self.lin)+" "+str(self.col)
 
 
 def convert_file_to_map(file_map_path):

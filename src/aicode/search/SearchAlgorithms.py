@@ -15,7 +15,6 @@ def sortFunction(val):
 # 4) Uniform cost search (CustoUniforme)
 # 5) Greddy search algorithm (BuscaGananciosa)
 # 6) A* search algorithm (AEstrela)
-# 7) hill-climing search algorithms
 #
 
 class SearchAlgorithm:
@@ -133,51 +132,12 @@ class AEstrela (SearchAlgorithm):
                 new_n = Node(i,n)
                 # eh necessario descrever o conteudo do estado
                 # para verificar se ele já foi instanciado ou nao
-                #if (new_n.state.env() not in states):
-                open.append((new_n,new_n.f()))
+                if (new_n.state.env() not in states):
+                    open.append((new_n,new_n.f()))
                     # nao eh adiciona o estado ao vetor.
                     # eh adicionado o conteudo
-                #states.append(new_n.state.env())
-                #logging.debug(len(states))
-                #else: 
-                #    logging.debug('nao entrou')
-        return None
-
-class SubidaMontanha (SearchAlgorithm):
-
-    def best(self, successors):
-        best_state = successors[0]
-        for i in successors:
-            if i.h() < best_state.h():
-                best_state = i
-        return best_state
-
-    def search (self, initialState):
-        atual = initialState
-        while True:
-            prox = self.best(atual.sucessors())
-            if prox.h() >= atual.h():
-                return atual
-            atual = prox
-
-class SubidaMontanha2 (SearchAlgorithm):
-
-    def best(self, successors):
-        best_state = successors[0]
-        for i in successors:
-            if i.h() < best_state.h():
-                best_state = i
-        return best_state
-
-    def search (self, initialState):
-        atual = initialState
-        while True:
-            prox = self.best(atual.sucessors())
-            if prox.h() >= atual.h():
-                if atual.is_goal():
-                    return atual
+                    states.append(new_n.state.env())
+                    logging.debug(len(states))
                 else: 
-                    atual.randomBoard()
-            else:
-                atual = prox
-
+                    logging.debug('nao entrou')
+        return None
