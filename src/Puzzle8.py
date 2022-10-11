@@ -158,8 +158,9 @@ def main():
     tabuleiro_dificil3 = [[8,3,6],[7,5,4],[2,1,0]]
     tabuleiro_impossivel1 = [[3,4,8],[1,2,5],[7,0,6]]
     tabuleiro_impossivel2 = [[5,4,0],[6,1,8],[7,3,2]]
+    tabuleiro_impossivel3 = [[1,7,2],[3,9,5],[6,4,8]]
 
-    state = Puzzle8(tabuleiro_dificil3,'')
+    state = Puzzle8(tabuleiro_impossivel3,'')
     print(state.show_path())
 
 if __name__ == '__main__':

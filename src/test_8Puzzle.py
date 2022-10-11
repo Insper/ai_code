@@ -7,9 +7,19 @@ tabuleiro_dificil1 = [[7,8,6],[2,3,5],[1,4,0]]
 tabuleiro_dificil2 = [[7,8,6],[2,3,5],[0,1,4]]
 tabuleiro_impossivel1 = [[3,4,8],[1,2,5],[7,0,6]]
 tabuleiro_impossivel2 = [[5,4,0],[6,1,8],[7,3,2]]
+tabuleiro_impossivel3 = [[1,7,2],[3,9,5],[6,4,8]]
 tabuleiro_invertido = [[8,7,6],[5,0,4],[3,2,1]]
 
 def test_facil():
+    print('facil')    
+    inicio = datetime.now()
+    state = Puzzle8(tabuleiro_facil, '')
+    r = state.show_path()
+    fim = datetime.now()
+    print(fim - inicio)
+    assert r == " ; direita ; direita ; baixo ; esquerda ; esquerda ; cima ; cima ; direita ; baixo"
+
+def test_facil2():
     print('facil')    
     inicio = datetime.now()
     state = Puzzle8(tabuleiro_facil, '')
@@ -63,6 +73,15 @@ def test_impossivel2():
     print(fim - inicio)
     assert r == "Nao tem solucao"
 
+def test_impossivel3():
+    print('impossivel 3')
+    inicio = datetime.now()
+    state = Puzzle8(tabuleiro_impossivel3, '')
+    r = state.show_path()
+    fim = datetime.now()
+    print(fim - inicio)
+    assert r == "Nao tem solucao"
+
 def test_tabuleiro_invertido():
     print('invertido')
     inicio = datetime.now()
@@ -71,5 +90,3 @@ def test_tabuleiro_invertido():
     fim = datetime.now()
     print(fim - inicio)
     assert r.count(";") <= 25
-
-
