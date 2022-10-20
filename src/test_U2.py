@@ -67,9 +67,4 @@ def test_algorithm_BuscaProfundidadeI():
     result = algorithm.search(state)
     assert result.g >= 17
 
-
-
-
-
-
     
