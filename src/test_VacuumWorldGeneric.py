@@ -247,6 +247,48 @@ def test_largura_simple_14():
     print('\n')
     assert result.g == 7
 
+def test_largura_simple_15():
+    print('\n#### Largura Simples 15 ####')
+    file_map_path = 'data/vacuum_simple_15.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 14
+
+def test_largura_simple_16():
+    print('\n#### Largura Simples 16 ####')
+    file_map_path = 'data/vacuum_simple_16.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 10
+
+def test_largura_simple_17():
+    print('\n#### Largura Simples 17 ####')
+    file_map_path = 'data/vacuum_simple_17.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 11
+
 #
 # Para executar um script como um todo talvez você tenha que comentar este teste.
 #
@@ -511,6 +553,47 @@ def test_profundidade_corners():
     print('\n')
     assert result.g == 15
 
+def test_profundidade_simple_15():
+    print('\n#### Profundidade Simples 15 ####')
+    file_map_path = 'data/vacuum_simple_15.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 14
+
+def test_profundidade_simple_16():
+    print('\n#### Profundidade Simples 16 ####')
+    file_map_path = 'data/vacuum_simple_16.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 10
+
+def test_profundidade_simple_17():
+    print('\n#### Profundidade Simples 17 ####')
+    file_map_path = 'data/vacuum_simple_17.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaLargura()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 11
 
 #
 # BPI
@@ -728,3 +811,45 @@ def test_BPI_simple_14():
     print(f'Solução = {result.show_path()}')
     print('\n')
     assert result.g == 7 
+
+def test_BPI_simple_15():
+    print('\n#### BPI Simples 15 ####')
+    file_map_path = 'data/vacuum_simple_15.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 14
+
+def test_BPI_simple_16():
+    print('\n#### BPI Simples 16 ####')
+    file_map_path = 'data/vacuum_simple_16.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 10
+
+def test_BPI_simple_17():
+    print('\n#### BPI Simples 17 ####')
+    file_map_path = 'data/vacuum_simple_17.txt'
+    lin = 0
+    col = 0
+    mapa = convert_file_to_map(file_map_path)
+    print(mapa)
+    state = VacuumWorldGeneric(mapa, lin, col, '')
+    algorithm = BuscaProfundidadeIterativa()
+    result = algorithm.search(state)
+    print(f'Solução = {result.show_path()}')
+    print('\n')
+    assert result.g == 11
